@@ -16,4 +16,13 @@ urlpatterns = [
         'django.contrib.auth.views.logout_then_login',
         name='logout_then_login'),
     url(r'^$', views.dashboard, name='dashboard'),
+
+    url(r'^password-change/$',
+        'django.contrib.auth.views.password_change',
+        {'template_name': 'account/password_change_form.html'},
+        name='password_change'),
+    url(r'^password-change/done/$',
+        'django.contrib.auth.views.password_change_done',
+        {'template_name': 'account/password_change_done.html'},
+        name='password_change_done'),
 ]
