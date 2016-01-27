@@ -44,4 +44,6 @@ urlpatterns = [
         'django.contrib.auth.views.password_reset_complete',
         {'template_name': 'account/password_reset_complete.html'},
         name='password_reset_complete'),
+
+    url(r'^register/$', views.register, name='register'),
 ]
