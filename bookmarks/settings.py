@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'account'
+    'account',
+    'social.apps.django_app.default'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -116,4 +117,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
-                           'account.authentication.EmailAuthBackend',)
+                           'account.authentication.EmailAuthBackend',
+                           'social.backends.facebook.Facebook2OAuth2')
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1658142214439784' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '3c98a9e0a1f9eaccd3ce62d9f539cac6' # Facebook App Secret
