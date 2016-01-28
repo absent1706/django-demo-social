@@ -16,7 +16,17 @@ account <a href="{% url "register" %}">register here</a></p>
 
 <div class="login-form">
     <form action="{% url 'login' %}" method="post">
-        {{ form.as_p }}
+        {{ form.non_field_errors }}
+        <p>
+            {{ form.username.errors }}
+            <label for="{{ form.username.id_for_label }}">Username or email</label>
+            {{ form.username }}
+        </p>
+        <p>
+            {{ form.password.errors }}
+            <label for="{{ form.password.id_for_label }}">Password</label>
+            {{ form.password }}
+        </p>
         {% csrf_token %}
         <a href="{% url 'password_reset' %}">Forgot your password?</a>
         <input type="hidden" name="next" value="{{ next }}" />
