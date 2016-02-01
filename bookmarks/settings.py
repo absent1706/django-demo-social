@@ -129,3 +129,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '3c98a9e0a1f9eaccd3ce62d9f539cac6' # Facebook App 
 
 SOCIAL_AUTH_TWITTER_KEY = '0puPBJe3gS7uCYyliGlC8IQcO' # Twitter Consumer Key
 SOCIAL_AUTH_TWITTER_SECRET = 'yZV3pveE6YMydIjsDlYOOJxPK1O8ljFKIMm47Y0Jdyy8o6vCER' # Twitter Consumer Secret
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
